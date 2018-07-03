@@ -48,7 +48,7 @@ cluster in VM provided by Minishift.
        And stdout should match "router-\d-\w{5}\s*1\/1\s*Running"
 
   Scenario: User deploys nodejs example application from OpenShift repository
-     Given Minishift has state "Running"
+     Given Openshift has state "Running"
       When executing "oc new-app https://github.com/openshift/nodejs-ex -l name=myapp" retrying 10 times with wait period of 2 seconds
       Then stdout should contain
        """
